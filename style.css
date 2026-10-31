@@ -1,0 +1,261 @@
+/* ==========================================
+   1. REGRAS GERAIS E VARIÁVEIS
+   ========================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-color: #0f172a;        /* Azul escuro moderno (Slate 900) */
+    --card-bg: #1e293b;         /* Tom um pouco mais claro para cards */
+    --text-main: #f8fafc;       /* Texto claro */
+    --text-muted: #94a3b8;      /* Texto secundário */
+    --accent: #ec4899;          /* Rosa vibrante (destaque delicado e moderno) */
+    --accent-hover: #db2777;
+    --primary: #38bdf8;         /* Azul claro tech */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f1f5f9;  /* Fundo geral suave */
+    color: #334155;
+    line-height: 1.7;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ==========================================
+   2. CABEÇALHO E MENU DE NAVEGAÇÃO
+   ========================================== */
+header {
+    background-color: #0f172a;
+    padding: 20px 40px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.menu a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.menu a:hover, .menu a.ativo {
+    color: var(--text-main);
+    background-color: rgba(236, 72, 153, 0.15);
+}
+
+/* ==========================================
+   3. CONTEÚDO PRINCIPAL (<main>)
+   ========================================== */
+main {
+    max-width: 900px;
+    width: 90%;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    flex: 1;
+}
+
+/* Títulos */
+h1 {
+    color: #0f172a;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+h2 {
+    color: #334155;
+    font-size: 1.4rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 8px;
+}
+
+/* Parágrafos e listas */
+p {
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+    color: #475569;
+}
+
+ul {
+    padding-left: 20px;
+    color: #475569;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* ==========================================
+   4. ESTILO DE BOTÕES
+   ========================================== */
+.btn {
+    display: inline-block;
+    background-color: var(--accent);
+    color: #ffffff;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    margin-top: 15px;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3);
+}
+
+.btn:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   5. RODAPÉ DA PÁGINA
+   ========================================== */
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #64748b;
+    font-size: 0.9rem;
+    background-color: #e2e8f0;
+    margin-top: auto;
+}
+
+/* ==========================================
+   6. ESTILOS DOS CARDS DE PROJETOS
+   ========================================== */
+.lista-projetos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.card-projeto {
+    border: 1px solid #e2e8f0;
+    padding: 25px;
+    border-radius: 12px;
+    background-color: #f8fafc;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-projeto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.1);
+    border-color: #cbd5e1;
+}
+
+.card-projeto h2 {
+    margin-top: 0;
+    border-bottom: none;
+    font-size: 1.25rem;
+    color: #0f172a;
+}
+
+/* ==========================================
+   7. ESTILOS DO FORMULÁRIO DE CONTATO
+   ========================================== */
+.formulario-contato {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campo label {
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.campo input, 
+.campo textarea {
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: #f8fafc;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.campo input:focus, 
+.campo textarea:focus {
+    border-color: var(--accent);
+    background-color: #ffffff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.15);
+}
+
+/* ==========================================
+   8. ESTILOS ESPECÍFICOS DA PÁGINA SOBRE (FOTO)
+   ========================================== */
+.sobre-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.sobre-foto {
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.sobre-foto img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--accent);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.sobre-texto {
+    flex: 1;
+}
+
+/* Responsivo para celulares (a foto vai para cima do texto) */
+@media (max-width: 768px) {
+    .sobre-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .menu ul {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    header {
+        padding: 15px;
+    }
+}
